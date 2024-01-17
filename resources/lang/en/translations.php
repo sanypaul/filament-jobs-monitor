@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'breadcrumb' => 'Queued Tasks Monitor',
-    'title' => 'Queued Tasks',
+    'breadcrumb' => 'Background Tasks Monitor',
+    'title' => 'Background Tasks',
     'navigation_label' => 'Tasks',
     'navigation_group' => 'System',
     'total_jobs' => 'Total Tasks Executed',

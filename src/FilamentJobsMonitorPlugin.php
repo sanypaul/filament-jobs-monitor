@@ -144,7 +144,7 @@ class FilamentJobsMonitorPlugin implements Plugin
      */
     public function getPluralLabel(): ?string
     {
-        return $this->evaluate($this->pluralLabel) ?? config('filament-jobs-monitor.resources.plural_label');
+        return $this->evaluate($this->pluralLabel) ?? config('filament-jobs-monitor.resources.navigation_label');
     }
 
     /**
