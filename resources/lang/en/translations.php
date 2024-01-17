@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'breadcrumb' => 'Queued Jobs Monitor',
-    'title' => 'Queued Jobs',
-    'navigation_label' => 'Jobs',
+    'breadcrumb' => 'Queued Tasks Monitor',
+    'title' => 'Queued Tasks',
+    'navigation_label' => 'Tasks',
     'navigation_group' => 'System',
-    'total_jobs' => 'Total Jobs Executed',
+    'total_jobs' => 'Total Tasks Executed',
     'execution_time' => 'Total Execution Time',
     'average_time' => 'Average Execution Time',
     'succeeded' => 'Succeeded',
