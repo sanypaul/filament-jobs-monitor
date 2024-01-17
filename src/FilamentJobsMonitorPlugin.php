@@ -290,4 +290,13 @@ class FilamentJobsMonitorPlugin implements Plugin
     {
         return __('filament-jobs-monitor::translations.breadcrumb');
     }
+
+    /**
+     * Filter time.
+     */
+    public function filterTime($time): string
+    {
+        $filter = config('filament-jobs-monitor.resources.widget_time_filter_func');
+        return is_callable($filter) ? call_user_func($filter, $time) : $time;
+    }
 }

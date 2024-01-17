@@ -2,6 +2,7 @@
 
 namespace Croustibat\FilamentJobsMonitor\Resources\QueueMonitorResource\Widgets;
 
+use Croustibat\FilamentJobsMonitor\FilamentJobsMonitorPlugin;
 use Croustibat\FilamentJobsMonitor\Models\QueueMonitor;
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
 use Filament\Widgets\StatsOverviewWidget\Card;
@@ -22,9 +23,9 @@ class QueueStatsOverview extends BaseWidget
             ->first();
 
         return [
-            Card::make(__('filament-jobs-monitor::translations.total_jobs'), $aggregatedInfo->count ?? 0),
-            Card::make(__('filament-jobs-monitor::translations.execution_time'), ($aggregatedInfo->total_time_elapsed ?? 0).'s'),
-            Card::make(__('filament-jobs-monitor::translations.average_time'), ceil((float) $aggregatedInfo->average_time_elapsed).'s' ?? 0),
+            Card::make(__('filament-jobs-monitor::translations.total_jobs'), FilamentJobsMonitorPlugin::get()->filterTime($aggregatedInfo->count ?? 0)),
+            Card::make(__('filament-jobs-monitor::translations.execution_time'), FilamentJobsMonitorPlugin::get()->filterTime(($aggregatedInfo->total_time_elapsed ?? 0)).'s'),
+            Card::make(__('filament-jobs-monitor::translations.average_time'), FilamentJobsMonitorPlugin::get()->filterTime(ceil((float) $aggregatedInfo->average_time_elapsed)).'s' ?? 0),
         ];
     }
 }
