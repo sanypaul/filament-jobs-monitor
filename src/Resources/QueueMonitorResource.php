@@ -97,7 +97,8 @@ class QueueMonitorResource extends Resource
                                 ->whereNull('finished_at');
                         }
                     }),
-            ]);
+            ])
+            ->paginated([5, 10, 20, 30]);
     }
 
     public static function getNavigationBadge(): ?string
