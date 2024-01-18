@@ -53,10 +53,11 @@ class QueueMonitorProvider extends ServiceProvider
     {
         $now = now();
         $jobId = self::getJobId($job);
-
+        $jobName = explode('\\', $job->resolveName());
+        
         $monitor = QueueMonitor::query()->create([
             'job_id' => $jobId,
-            'name' => end(explode('\\', $job->resolveName())),
+            'name' => end($jobName),
             'queue' => $job->getQueue(),
             'started_at' => $now,
             'attempt' => $job->attempts(),
